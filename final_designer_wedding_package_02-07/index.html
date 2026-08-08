@@ -1,0 +1,1162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Join Sayan and Swati in celebrating their wedding reception on November 25, 2026, at Ulludwani Marriage Hall. View event details and location map." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sayan & Swati Reception" />
+    <meta property="og:description"
+        content="Join Sayan and Swati in celebrating their wedding reception on November 25, 2026, at Ulludwani Marriage Hall." />
+    <meta property="og:image" content="final_wedding_invite_designer.jpg" />
+
+    <title>Sayan & Swati Reception</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    <style>
+        :root {
+            --beige: #f4e4cf;
+            --beige-soft: rgba(244, 228, 207, 0.72);
+            --rose: #c86c6c;
+            --wine: #7a1f1f;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-family: Georgia, serif;
+            background: linear-gradient(180deg, #2b0000, #5a1010);
+            animation: bgMove 10s infinite alternate;
+        }
+
+        @keyframes bgMove {
+            from {
+                background-position: left;
+            }
+
+            to {
+                background-position: right;
+            }
+        }
+
+        .card {
+            position: relative;
+            width: min(100%, 900px) !important;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(255, 120, 120, 0.35);
+            background: var(--beige);
+        }
+
+        .invitation-card {
+            position: relative;
+            width: 100%;
+        }
+
+        .invitation-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .date-overlay {
+            position: absolute;
+            font-family: math;
+            /* Adjust these values */
+            top: 43%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            display: flex;
+            align-items: center;
+            gap: 35px;
+
+            width: 100%;
+            justify-content: center;
+        }
+
+        .date-line {
+            width: 120px;
+            height: 3px;
+            background: #5a1d17;
+            border-radius: 20px;
+        }
+
+        .date-center {
+            text-align: center;
+        }
+
+        .wedding-date {
+            font-size: 50px;
+            /* font-weight: 700; */
+            color: #3d120d;
+            line-height: 1;
+        }
+
+        .dots {
+            font-size: 14px;
+            letter-spacing: 6px;
+            color: #5a1d17;
+            line-height: 1;
+        }
+
+        .date-center .dots:first-child {
+            margin-bottom: 10px;
+        }
+
+        .date-center .dots:last-child {
+            margin-top: 10px;
+        }
+
+
+
+
+
+
+        .card img {
+            width: 100%;
+            display: block;
+        }
+
+        .overlay {
+            position: absolute;
+            z-index: 2;
+        }
+
+        .venue-overlay {
+            left: 50%;
+            /* border: 2px solid brown; */
+            /* top: 46%; */
+            /* bottom: 10px; */
+            bottom: 20px;
+            width: 65%;
+            /* background: #f7d7c3; */
+            border-radius: 20px;
+            opacity: 1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-bottom: 25px;
+            box-sizing: border-box;
+            z-index: 2;
+            transform: translateX(-50%);
+        }
+
+        .venue-title {
+            margin: 0;
+            font-size: clamp(16px, 2.7vw, 28px);
+            line-height: 1.15;
+            color: #963838;
+            font-family: cursive;
+            font-style: italic;
+            text-wrap: balance;
+        }
+
+        .floating-hearts {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 3;
+        }
+
+        .floating-hearts span,
+        .floating-hearts i {
+            position: absolute;
+            /* color: rgba(255, 111, 145, 0.62); */
+            color: rgb(255 111 145 / 98%);
+            opacity: 0;
+            animation: floatHeart linear infinite;
+            /* text-shadow: 0 0 10px rgba(255, 182, 193, 0.26); */
+            /* -webkit-text-stroke: 0 transparent; */
+        }
+
+        .floating-hearts span.solid {
+            /* color: rgba(255, 111, 145, 0.72); */
+            color: #f4715bed;
+        }
+
+        .floating-hearts span.outline {
+            color: rgba(255, 248, 245, 0.18);
+            -webkit-text-stroke: 0.9px rgba(255, 111, 145, 0.82);
+            text-shadow: 0 0 7px rgba(255, 182, 193, 0.16);
+        }
+
+        .floating-hearts span.accent-heart {
+            filter: drop-shadow(0 0 8px rgba(255, 111, 145, 0.22));
+        }
+
+        .floating-hearts span:nth-child(1) {
+            left: 5%;
+            transform: scale(0.9);
+            opacity: 0.6;
+            animation:
+                moveclouds 15s linear infinite,
+                sideWays 4s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(2) {
+            left: 25%;
+            transform: scale(0.6);
+            opacity: 0.9;
+            animation:
+                moveclouds 25s linear infinite,
+                sideWays 5s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(3) {
+            left: 55%;
+            transform: scale(0.8);
+            opacity: 0.8;
+            animation:
+                moveclouds 20s linear infinite,
+                sideWays 4s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(4) {
+            left: 72%;
+            transform: scale(0.75);
+            opacity: 0.9;
+            animation:
+                moveclouds 18s linear infinite,
+                sideWays 2s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(5) {
+            left: 88%;
+            transform: scale(0.8);
+            opacity: 0.3;
+            animation:
+                moveclouds 7s linear infinite,
+                sideWays 1s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(6) {
+            left: 33%;
+            opacity: 1;
+            animation:
+                moveclouds 10s linear infinite,
+                swayWays 9s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(7) {
+            left: 15%;
+            opacity: 0.7;
+            animation:
+                moveclouds 8s linear infinite,
+                swayWays 9s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(8) {
+            left: 64%;
+            transform: scale(0.8);
+            opacity: 0.8;
+            animation:
+                moveclouds 13s linear infinite,
+                sideWays 4s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(9) {
+            left: 43%;
+            transform: scale(0.8);
+            opacity: 0.4;
+            animation:
+                moveclouds 20s linear infinite,
+                sideWays 4s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(10) {
+            left: 9%;
+            opacity: 0.5;
+            animation:
+                moveclouds 10s linear infinite,
+                swayWays 9s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(11) {
+            left: 20%;
+            transform: scale(0.7);
+            opacity: 0.7;
+            animation:
+                moveclouds 12s linear infinite,
+                sideWays 3s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(12) {
+            left: 50%;
+            transform: scale(0.9);
+            opacity: 0.9;
+            animation:
+                moveclouds 15s linear infinite,
+                sideWays 4s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(13) {
+            left: 75%;
+            transform: scale(0.8);
+            opacity: 0.8;
+            animation:
+                moveclouds 18s linear infinite,
+                sideWays 5s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(14) {
+            left: 90%;
+            transform: scale(0.7);
+            opacity: 0.7;
+            animation:
+                moveclouds 10s linear infinite,
+                sideWays 2s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(15) {
+            left: 39%;
+            transform: scale(0.9);
+            opacity: 0.9;
+            animation:
+                moveclouds 12s linear infinite,
+                sideWays 3s ease-in-out infinite alternate;
+        }
+
+        /* .floating-hearts span:nth-child(1) {
+            left: 8%;
+            top: 58%;
+            font-size: 18px;
+            animation-duration: 13s;
+            animation-delay: 0s;
+        }
+ */
+
+        .floating-hearts span {
+            position: relative;
+        }
+
+        .floating-hearts span:before,
+        .floating-hearts span:after {
+            position: absolute;
+            content: "";
+            left: 18px;
+            top: 0;
+            width: 18px;
+            height: 30px;
+            background: #d17b7c;
+            border-radius: 30px 30px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .floating-hearts span:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+        @keyframes moveclouds {
+            0% {
+                top: 500px;
+            }
+
+            100% {
+                top: -500px;
+            }
+        }
+
+        @keyframes sideWays {
+            0% {
+                margin-left: 0px;
+            }
+
+            100% {
+                margin-left: 50px;
+            }
+        }
+
+        @keyframes swayWays {
+            0% {
+                transform: rotate(12deg);
+                left: -0.3%;
+            }
+
+            33% {
+                transform: rotate(-2deg);
+                left: 0.7%;
+            }
+
+            100% {
+                transform: rotate(0deg);
+                left: -12%;
+            }
+        }
+
+        .map-button {
+            position: static;
+            /* background: #fff5f0;
+            padding: clamp(10px, 1.6vw, 16px) clamp(18px, 4vw, 34px);
+            border-radius: 999px;
+            border: 2px solid #a94444; */
+            text-decoration: none;
+            color: #7a1f1f;
+            font-size: clamp(13px, 2vw, 20px);
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            white-space: nowrap;
+            max-width: 100%;
+            width: fit-content;
+            transition:
+                transform 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+            z-index: 5;
+            pointer-events: auto;
+        }
+
+        .map-button:hover {
+            /* transform: scale(1.04);
+            background: #fff;
+            box-shadow: 0 10px 25px rgba(122, 31, 31, 0.18); */
+        }
+
+        .music-note {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(12px, 1.8vw, 22px);
+            font-weight: 600;
+            white-space: nowrap;
+            color: #5b2018;
+            text-decoration: none;
+            line-height: 1.2;
+            cursor: pointer;
+            outline: none;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .music-note:hover {
+            color: #8c3b2b;
+        }
+
+        .music-note.is-playing {
+            color: #8c3b2b;
+            animation: musicPulse 2s ease-in-out infinite;
+        }
+
+        .music-status {
+            display: none;
+            position: absolute;
+            right: 18px;
+            bottom: 68px;
+            max-width: min(320px, calc(100% - 36px));
+            color: #fff4ec;
+            background: rgba(122, 31, 31, 0.72);
+            border: 1px solid rgba(255, 235, 225, 0.18);
+            border-radius: 999px;
+            padding: 8px 12px;
+            font-size: 12px;
+            box-shadow: 0 8px 20px rgba(122, 31, 31, 0.16);
+            z-index: 4;
+            pointer-events: none;
+        }
+
+        @keyframes musicPulse {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-3px);
+            }
+        }
+
+        .invitation-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+
+            background: rgb(250 189 131);
+            border: 2px solid #8f4a3a;
+            border-radius: 24px;
+            padding: 7px 10px;
+            width: 80%;
+            /* width: calc(100% - 60px); */
+            margin: 0 auto;
+            box-sizing: border-box;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+        }
+
+        .invitation-footer-item {
+            /* flex: 1; */
+            /* flex: 1 1 0; */
+             flex: 1 1 33.33%;
+            /* flex: 1 0 auto; */
+        max-width: fit-content;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            position: relative;
+            /* min-height: 52px; */
+        }
+.invitation-footer-item span {
+    /* white-space: nowrap; */
+}
+
+.invitation-footer-item i {
+    /* flex-shrink: 0; */
+}
+
+/* .invitation-footer-item:first-child {
+    flex: 0 0 auto;
+}
+
+.invitation-footer-item:nth-child(2),
+.invitation-footer-item:nth-child(3) {
+    flex: 1;
+    justify-content: center;
+} */
+        /* .invitation-footer-item:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 36px;
+            background: rgba(120, 70, 50, .3);
+        } */
+
+        .invitation-footer-item i,
+        .invitation-footer-item svg {
+            font-size: 18px;
+            color: #6a2b22;
+            flex-shrink: 0;
+        }
+
+        .invitation-footer-item span {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(12px, 1.8vw, 18px);
+            font-weight: 600;
+            color: #5b2018;
+            text-decoration: none;
+            line-height: 1.2;
+        }
+
+        .invitation-footer-item a {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(12px, 1.8vw, 18px);
+            font-weight: 600;
+            white-space: nowrap;
+            color: #5b2018;
+            text-decoration: none;
+            line-height: 1.2;
+        }
+
+        .invitation-footer-item:hover a {
+            color: #8c3b2b;
+        }
+
+        button.music-note {
+            background: beige;
+            padding: 5px;
+            border: 1px solid brown;
+            border-radius: 19px;
+        }
+
+        .fa-solid.fa-music {
+            font-size: 18px;
+            padding-right: 5px;
+        }
+
+        @media (min-width: 1580px) {
+            .invitation-footer {
+                width: 55%;
+            }
+        }
+          @media (max-width: 1199px) {
+         .venue-overlay {
+                position: relative !important;
+                bottom: auto !important;
+                left: auto !important;
+                transform: none !important;
+                width: 100% !important;
+                margin-top: 20px;
+                padding-bottom: 10px !important;
+            }
+        }
+
+                @media (max-width: 991px) {
+         .invitation-footer-item span{
+                white-space: nowrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .divider{
+                /* display: none; */
+            }
+            .venue-overlay {
+                position: relative !important;
+                bottom: auto !important;
+                left: auto !important;
+                transform: none !important;
+                width: 100% !important;
+                margin-top: 20px;
+                padding-bottom: 10px !important;
+            }
+
+            .invitation-footer {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+                padding: 10px 8px;
+                border-radius: 18px;
+                width: 100%;
+            }
+
+            .invitation-footer-item {
+                font-size: clamp(11px, 2.5vw, 15px);
+                gap: 8px;
+            }
+
+            .fa-solid.fa-music {
+                font-size: 11px;
+                padding-right: 2px;
+            }
+
+
+            .invitation-footer-item:first-child {
+                flex: 1 1 0;
+                justify-content: center;
+                /* margin-bottom: 5px; */
+            }
+
+            .invitation-footer-item:not(.divider):nth-child(2),
+            .invitation-footer-item:not(.divider):nth-child(3) {
+                /* flex: 1 1 40%; */
+                flex: 1 1 0;
+
+                justify-content: center;
+            }
+
+            .invitation-footer-item span,
+            .invitation-footer-item a,
+            .music-note {
+                font-size: clamp(11px, 2.5vw, 15px);
+            }
+
+            .invitation-footer-item i,
+            .invitation-footer-item svg {
+                font-size: clamp(12px, 3vw, 18px);
+            }
+
+            .invitation-footer-item:not(:last-child)::after {
+                display: none;
+            }
+        }
+
+
+        @media (max-width: 767px) {
+            .date-overlay {
+                top: 44%;
+                width: 95%;
+            }
+
+            .dots {
+                font-size: 7px;
+                letter-spacing: 4px;
+            }
+
+            .wedding-date {
+                font-size: 30px;
+            }
+
+            .date-center .dots:first-child {
+                margin-bottom: 5px;
+            }
+
+            .date-center .dots:last-child {
+                margin-top: 5px;
+            }
+
+            .date-line {
+                max-width: 50px;
+            }
+        }
+
+        @media (max-width: 980px) {
+            .card {
+                border-radius: 18px;
+            }
+
+            .venue-overlay {
+                /* top: 46%; */
+                width: 80%;
+                /* min-height: 14%; */
+            }
+        }
+
+        @media (max-width: 640px) {
+            .music-note {
+                right: 10px;
+                bottom: 10px;
+                gap: 8px;
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+
+            .music-status {
+                right: 10px;
+                bottom: 56px;
+                max-width: calc(100% - 20px);
+                font-size: 11px;
+                padding: 7px 10px;
+            }
+
+            .venue-overlay {
+                /* width: 69%;
+                top: 47%;
+                min-height: 13%;
+                gap: 7px; */
+                padding: 8px 10px;
+                border-radius: 16px;
+
+                position: absolute;
+                bottom: 20px;
+                /* display: flex; */
+                justify-content: center;
+                animation: c;
+                left: 50%;
+            }
+
+            .venue-title {
+                font-size: clamp(14px, 4vw, 18px);
+            }
+
+            .map-button {
+                font-size: 12px;
+                padding: 8px 12px;
+                gap: 6px;
+            }
+
+            .floating-hearts span:nth-child(n) {
+                opacity: 0.45;
+            }
+
+            .floating-hearts span:nth-child(n + 9) {
+                opacity: 0.35;
+            }
+        }
+
+        @media (max-width: 516px) {
+            .card {
+                border-radius: 14px;
+            }
+
+            .venue-overlay {
+                /* top: 45%; */
+                width: 100%;
+                /* min-height: 15%; */
+                gap: 6px;
+                padding: 7px 8px;
+                border-radius: 14px;
+            }
+
+            .venue-title {
+                font-size: 13px;
+                line-height: 1.05;
+            }
+
+            .map-button {
+                width: 100%;
+                max-width: 230px;
+                font-size: 11px;
+                padding: 0px;
+                gap: 5px;
+                white-space: normal;
+                text-align: center;
+            }
+
+            .floating-hearts span:nth-child(1),
+            .floating-hearts span:nth-child(3),
+            .floating-hearts span:nth-child(5),
+            .floating-hearts span:nth-child(7) {
+                font-size: 12px;
+            }
+
+            .floating-hearts span:nth-child(2),
+            .floating-hearts span:nth-child(4),
+            .floating-hearts span:nth-child(6),
+            .floating-hearts span:nth-child(8) {
+                font-size: 9px;
+            }
+
+            .music-note {
+                right: 8px;
+                bottom: 8px;
+                padding: 7px 10px;
+                font-size: 11px;
+                gap: 6px;
+            }
+
+            .music-status {
+                right: 8px;
+                bottom: 52px;
+                max-width: calc(100% - 16px);
+            }
+        }
+
+
+        @media (max-width: 480px) {
+             .invitation-footer > .divider:nth-child(4) {
+    display: none !important;
+  }
+            .date-overlay {
+                top: 44%;
+            }
+
+            .date-line {
+                max-width: 35px;
+            }
+            .invitation-footer-item span{
+                /* white-space: nowrap; */
+            }
+        
+    .invitation-footer-item i, .invitation-footer-item svg ,
+    .fa-solid.fa-music {
+        /* font-size: 10px; */
+    }
+        .venue-overlay{
+        left: 0px !important;
+    
+    }
+ 
+  .invitation-footer {
+    /* position: relative; */
+            padding: 5px;
+            font-size:13px;
+    /* padding-bottom: 55px;   */
+  }
+
+  .invitation-footer-item:last-child {
+    position: absolute;
+    top: -65px; /* move above footer */
+    right: 35px;
+    z-index: 10;
+    flex: none;
+  }
+
+  .music-note {
+    background: #fce9d8;
+    border: 1px solid #8f4a3a;
+    border-radius: 999px;
+    padding: 8px 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+  }
+}
+
+
+        @media (max-width: 380px) {
+            .venue-title {
+                font-size: 12px;
+                line-height: 1.05;
+            }
+
+            .map-button {
+                padding: 0;
+                font-size: 12px;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div style="position: relative"
+        class="container-fluid px-2 px-sm-3 px-md-4 py-3 py-md-4 d-flex flex-column justify-content-center align-items-center min-vh-100">
+        <div class="card mx-auto" style="position: relative">
+            <!-- <img src="upperdiv.jpg" style="position: absolute;
+    top: 137px;
+    padding: 10px 25px;
+    /* background: #fcb37a; */
+    /* margin: 40px 0; */
+    left: 3px;" alt="Wedding Invite"> -->
+
+            <!-- <img src="final_wedding_invite_designer.jpg" alt="Wedding Invite"> -->
+            <img src="new.jpg" alt="Wedding Invite" />
+            <div class="date-overlay">
+                <span class="date-line"></span>
+
+                <div class="date-center">
+                    <div class="dots">● ● ●</div>
+                    <div class="wedding-date">25.11.2026</div>
+                    <div class="dots">● ● ●</div>
+                </div>
+
+                <span class="date-line"></span>
+            </div>
+            <!-- <div class="overlay venue-overlay px-2 px-md-3" aria-hidden="true">
+                <h2 class="venue-title text-center">Reception Venue: Ulludwani Marriage Hall</h2>
+                <a class="map-button" href="https://maps.app.goo.gl/eoWqFve4mPTxX1Uy7" target="_blank"
+                    rel="noopener noreferrer">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                    Google Map Link
+                </a>
+            </div> -->
+            <!-- <div class="date-overlay">
+                <div class="date-divider"></div>
+
+                <div class="date-main">
+                    25 . 11 . 2026
+                </div>
+
+                <div class="date-sub">
+                    Wednesday
+                </div>
+
+                <div class="date-divider"></div>
+            </div> -->
+
+
+            <div class="floating-hearts">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="music-status" id="musicStatus">No audio file selected</div>
+
+            <input id="musicFile" type="file" accept="audio/*" hidden />
+        </div>
+        
+        <div class="overlay venue-overlay px-2 px-md-3 d-flex flex-column">
+            <div class="invitation-footer">
+                <div class="invitation-footer-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Venue: Ulludwani Marriage Hall</span>
+                </div>
+                 <div class="invitation-footer-item divider" style="    color: #5b2018;">
+                    |
+                </div>
+
+                <div class="invitation-footer-item">
+                    <i class="fas fa-location-dot"></i>
+                    <!-- <a href="#">Google Map Link</a> -->
+                    <a class="map-button" href="https://maps.app.goo.gl/eoWqFve4mPTxX1Uy7" target="_blank"
+                        rel="noopener noreferrer">
+                        View Map
+                    </a>
+                </div>
+ <div class="invitation-footer-item divider" style="    color: #5b2018;">
+                    |
+                </div>
+                <div class="invitation-footer-item">
+
+                    <button class="music-note" id="musicToggle" type="button" aria-label="Add audio file"
+                        aria-pressed="false">
+                        <i style="  " class="fa-solid fa-music " aria-hidden="true"></i>
+                        <span id="musicLabel">Add Audio</span>
+                    </button>
+                    <audio id="backgroundMusic" preload="auto" loop playsinline></audio>
+                </div>
+            </div>
+            <!-- <div>
+          <h2 class="venue-title text-center">
+            Reception Venue: Ulludwani Marriage Hall
+          </h2>
+        </div>
+        <div>|</div>
+        <div>
+          <a
+            class="map-button"
+            href="https://maps.app.goo.gl/eoWqFve4mPTxX1Uy7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            Google Map Link
+          </a>
+        </div> -->
+        </div>
+    </div>
+
+
+    <script>
+        (function () {
+            const heartLayer = document.querySelector(".floating-hearts");
+            const musicToggle = document.getElementById("musicToggle");
+            const musicLabel = document.getElementById("musicLabel");
+            const musicFile = document.getElementById("musicFile");
+            const musicStatus = document.getElementById("musicStatus");
+            const backgroundMusic = document.getElementById("backgroundMusic");
+            const defaultTrack = "assets/audio/Parineeta_Music.mp3";
+            const legacyTrack = "Parineeta_Music";
+
+            let objectUrl = null;
+            let isPlaying = false;
+
+            function updateStatus(message) {
+                musicStatus.textContent = message;
+            }
+
+            function loadTrack(src, label) {
+                if (objectUrl) {
+                    URL.revokeObjectURL(objectUrl);
+                    objectUrl = null;
+                }
+
+                backgroundMusic.src = src;
+                backgroundMusic.currentTime = 0;
+                isPlaying = false;
+                musicToggle.classList.remove("is-playing");
+                musicToggle.classList.add("has-track");
+                musicToggle.setAttribute("aria-pressed", "false");
+                musicToggle.setAttribute("aria-label", " Play music");
+                musicLabel.textContent = " Play Music";
+                updateStatus(label);
+            }
+
+            backgroundMusic.addEventListener("error", () => {
+                if (
+                    backgroundMusic.src &&
+                    backgroundMusic.src.endsWith(defaultTrack)
+                ) {
+                    updateStatus(
+                        `No default track found. Add ${defaultTrack} or choose a file.`,
+                    );
+                    loadTrack(legacyTrack, `Trying legacy track: ${legacyTrack}`);
+                } else if (
+                    backgroundMusic.src &&
+                    backgroundMusic.src.endsWith(legacyTrack)
+                ) {
+                    updateStatus(
+                        `No default track found. Add ${defaultTrack} or choose a file.`,
+                    );
+                    backgroundMusic.removeAttribute("src");
+                    backgroundMusic.load();
+                } else {
+                    updateStatus("Unable to load the selected audio file.");
+                }
+                isPlaying = false;
+                musicToggle.classList.remove("is-playing");
+                musicToggle.setAttribute("aria-pressed", "false");
+                musicLabel.textContent = "Play Music";
+            });
+
+            function setPlaying(nextState) {
+                if (!backgroundMusic.src) {
+                    updateStatus("Choose an audio file first");
+                    musicFile.click();
+                    return;
+                }
+
+                isPlaying = nextState;
+                musicToggle.classList.toggle("is-playing", isPlaying);
+                musicToggle.classList.toggle(
+                    "has-track",
+                    Boolean(backgroundMusic.src),
+                );
+                musicToggle.setAttribute("aria-pressed", String(isPlaying));
+                musicToggle.setAttribute(
+                    "aria-label",
+                    isPlaying ? "Pause music" : "Play music",
+                );
+                musicLabel.textContent = isPlaying ? "Pause Music" : "Play Music";
+
+                if (isPlaying) {
+                    backgroundMusic.play().catch(() => {
+                        isPlaying = false;
+                        musicToggle.classList.remove("is-playing");
+                        musicToggle.setAttribute("aria-pressed", "false");
+                        musicLabel.textContent = "Play Music";
+                        updateStatus("Tap play again after choosing a file");
+                    });
+                    updateStatus("Playing audio");
+                } else {
+                    backgroundMusic.pause();
+                    updateStatus("Paused");
+                }
+            }
+
+            musicFile.addEventListener("change", () => {
+                const file = musicFile.files && musicFile.files[0];
+                if (!file) return;
+
+                objectUrl = URL.createObjectURL(file);
+                loadTrack(objectUrl, `Loaded: ${file.name}`);
+            });
+
+            musicToggle.addEventListener("click", () => {
+                setPlaying(!isPlaying);
+            });
+
+            loadTrack(defaultTrack, `Default track set: ${defaultTrack}`);
+
+            window.addEventListener("beforeunload", () => {
+                if (objectUrl) {
+                    URL.revokeObjectURL(objectUrl);
+                }
+            });
+        })();
+    </script>
+</body>
+
+</html>

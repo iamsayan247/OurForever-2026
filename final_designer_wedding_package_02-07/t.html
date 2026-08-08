@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayan & Swati Reception</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        .floating-hearts {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            /* overflow: hidden; */
+            z-index: 3;
+        }
+
+        .floating-hearts span,
+        .floating-hearts i {
+            position: absolute;
+            color: rgba(255, 111, 145, 0.62);
+            /* color: rgb(255 111 145 / 98%); */
+            opacity: 0;
+            /* text-shadow: 0 0 10px rgba(255, 182, 193, 0.26); */
+            /* -webkit-text-stroke: 0 transparent; */
+        }
+
+        .floating-hearts span {
+            /* color: rgba(255, 111, 145, 0.72); */
+            color: #f4715bed
+        }
+
+        .floating-hearts span.outline {
+            color: rgba(255, 248, 245, 0.18);
+            -webkit-text-stroke: 0.9px rgba(255, 111, 145, 0.82);
+            text-shadow: 0 0 7px rgba(255, 182, 193, 0.16);
+        }
+
+        .floating-hearts span.accent-heart {
+            filter: drop-shadow(0 0 8px rgba(255, 111, 145, 0.22));
+        }
+
+
+
+
+        .floating-hearts span:nth-child(1) {
+            left: 5%;
+            transform: scale(0.9);
+            opacity: 0.6;
+            animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(2) {
+            left: 25%;
+            transform: scale(0.6);
+            opacity: 0.9;
+            animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(3) {
+            left: 55%;
+            transform: scale(0.8);
+            opacity: 0.8;
+            animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(4) {
+            left: 72%;
+            transform: scale(0.75);
+            opacity: 0.9;
+            animation: moveclouds 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(5) {
+            left: 88%;
+            transform: scale(0.8);
+            opacity: 0.3;
+            animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(6) {
+            left: 33%;
+            opacity: 1;
+            animation: moveclouds 10s linear infinite, swayWays 9s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(7) {
+            left: 15%;
+            opacity: 0.7;
+            animation: moveclouds 8s linear infinite, swayWays 9s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(8) {
+            left: 64%;
+            transform: scale(0.8);
+            opacity: 0.8;
+            animation: moveclouds 13s linear infinite, sideWays 4s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(9) {
+            left: 43%;
+            transform: scale(0.8);
+            opacity: 0.4;
+            animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(10) {
+            left: 9%;
+            opacity: 0.5;
+            animation: moveclouds 10s linear infinite, swayWays 9s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(11) {
+            left: 20%;
+            transform: scale(0.7);
+            opacity: 0.7;
+            animation: moveclouds 12s linear infinite, sideWays 3s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(12) {
+            left: 50%;
+            transform: scale(0.9);
+            opacity: 0.9;
+            animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(13) {
+            left: 75%;
+            transform: scale(0.8);
+            opacity: 0.8;
+            animation: moveclouds 18s linear infinite, sideWays 5s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(14) {
+            left: 90%;
+            transform: scale(0.7);
+            opacity: 0.7;
+            animation: moveclouds 10s linear infinite, sideWays 2s ease-in-out infinite alternate;
+        }
+
+        .floating-hearts span:nth-child(15) {
+            left: 39%;
+            transform: scale(0.9);
+            opacity: 0.9;
+            animation: moveclouds 12s linear infinite, sideWays 3s ease-in-out infinite alternate;
+        }
+
+        /* .floating-hearts span:nth-child(1) {
+            left: 8%;
+            top: 58%;
+            font-size: 18px;
+            animation-duration: 13s;
+            animation-delay: 0s;
+        }
+ */
+
+
+
+
+        .floating-hearts span {
+            position: relative;
+        }
+
+        .floating-hearts span:before,
+        .floating-hearts span:after {
+            position: absolute;
+            content: "";
+            left: 18px;
+            top: 0;
+            width: 18px;
+            height: 30px;
+            /* background: #d17b7c; */
+            border-radius: 30px 30px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .floating-hearts span:nth-child(6n+1):before,
+        .floating-hearts span:nth-child(6n+1):after {
+            background: #ff4d6d;
+        }
+
+        .floating-hearts span:nth-child(6n+2):before,
+        .floating-hearts span:nth-child(6n+2):after {
+            background: #ff758f;
+        }
+
+        .floating-hearts span:nth-child(6n+3):before,
+        .floating-hearts span:nth-child(6n+3):after {
+            background: #ff8fa3;
+        }
+
+        .floating-hearts span:nth-child(6n+4):before,
+        .floating-hearts span:nth-child(6n+4):after {
+            background: #ffb3c1;
+        }
+
+        .floating-hearts span:nth-child(6n+5):before,
+        .floating-hearts span:nth-child(6n+5):after {
+            background: #fb6f92;
+        }
+
+        .floating-hearts span:nth-child(6n):before,
+        .floating-hearts span:nth-child(6n):after {
+            background: #ff477e;
+        }
+
+
+        .floating-hearts span:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+
+        @keyframes moveclouds {
+            0% {
+                top: 500px;
+            }
+
+            100% {
+                top: -500px;
+            }
+        }
+
+        @keyframes sideWays {
+            0% {
+                margin-left: 0px;
+            }
+
+            100% {
+                margin-left: 50px;
+            }
+        }
+
+        @keyframes swayWays {
+            0% {
+                transform: rotate(12deg);
+                left: -0.3%;
+            }
+
+            33% {
+                transform: rotate(-2deg);
+                left: 0.7%;
+            }
+
+            100% {
+                transform: rotate(0deg);
+                left: -12%;
+            }
+        }
+
+
+
+
+        .map-button {
+            position: static;
+            background: #fff5f0;
+            padding: clamp(10px, 1.6vw, 16px) clamp(18px, 4vw, 34px);
+            border-radius: 999px;
+            border: 2px solid #a94444;
+            text-decoration: none;
+            color: #7a1f1f;
+            font-size: clamp(13px, 2vw, 20px);
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            white-space: nowrap;
+            max-width: 100%;
+            width: fit-content;
+            transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+            z-index: 5;
+            pointer-events: auto;
+        }
+
+        .map-button:hover {
+            transform: scale(1.04);
+            background: #fff;
+            box-shadow: 0 10px 25px rgba(122, 31, 31, 0.18);
+        }
+
+        .music-note {
+            position: absolute;
+            right: 18px;
+            bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--wine);
+            background: rgba(255, 248, 240, 0.84);
+            border: 1px solid rgba(122, 31, 31, 0.18);
+            border-radius: 999px;
+            padding: 10px 14px;
+            font-size: clamp(12px, 1.4vw, 16px);
+            box-shadow: 0 8px 20px rgba(122, 31, 31, 0.12);
+            backdrop-filter: blur(4px);
+            z-index: 4;
+            animation: musicPulse 4s ease-in-out infinite;
+            cursor: pointer;
+            border: none;
+        }
+
+        .music-note i {
+            color: var(--rose);
+            font-size: 1.1em;
+        }
+
+        .music-note input {
+            display: none;
+        }
+
+        .music-note.is-playing {
+            background: rgba(255, 235, 225, 0.95);
+            box-shadow: 0 10px 24px rgba(122, 31, 31, 0.18);
+        }
+
+        .music-note.has-track {
+            border: 2px dashed rgba(168, 68, 68, 0.65);
+        }
+
+        .music-status {
+            display: none;
+            position: absolute;
+            right: 18px;
+            bottom: 68px;
+            max-width: min(320px, calc(100% - 36px));
+            color: #fff4ec;
+            background: rgba(122, 31, 31, 0.72);
+            border: 1px solid rgba(255, 235, 225, 0.18);
+            border-radius: 999px;
+            padding: 8px 12px;
+            font-size: 12px;
+            box-shadow: 0 8px 20px rgba(122, 31, 31, 0.16);
+            z-index: 4;
+            pointer-events: none;
+        }
+
+        @keyframes musicPulse {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-3px);
+            }
+        }
+
+        @media (max-width: 980px) {
+            .card {
+                border-radius: 18px;
+            }
+
+            .venue-overlay {
+                top: 46%;
+                width: 65%;
+                min-height: 14%;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .music-note {
+                right: 10px;
+                bottom: 10px;
+                gap: 8px;
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+
+            .music-status {
+                right: 10px;
+                bottom: 56px;
+                max-width: calc(100% - 20px);
+                font-size: 11px;
+                padding: 7px 10px;
+            }
+
+            .venue-overlay {
+                width: 69%;
+                top: 47%;
+                min-height: 13%;
+                gap: 7px;
+                padding: 8px 10px;
+                border-radius: 16px;
+            }
+
+            .venue-title {
+                font-size: clamp(14px, 4vw, 18px);
+            }
+
+            .map-button {
+                font-size: 12px;
+                padding: 8px 12px;
+                gap: 6px;
+            }
+
+            .floating-hearts span:nth-child(n) {
+                opacity: 0.45;
+            }
+
+            .floating-hearts span:nth-child(n+9) {
+                opacity: 0.35;
+            }
+        }
+
+        @media (max-width: 516px) {
+            .card {
+                border-radius: 14px;
+            }
+
+            .venue-overlay {
+                top: 45%;
+                width: 69%;
+                min-height: 15%;
+                gap: 6px;
+                padding: 7px 8px;
+                border-radius: 14px;
+            }
+
+            .venue-title {
+                font-size: 13px;
+                line-height: 1.05;
+            }
+
+            .map-button {
+                width: 100%;
+                max-width: 230px;
+                font-size: 11px;
+                padding: 7px 10px;
+                gap: 5px;
+                white-space: normal;
+                text-align: center;
+            }
+
+            .floating-hearts span:nth-child(1),
+            .floating-hearts span:nth-child(3),
+            .floating-hearts span:nth-child(5),
+            .floating-hearts span:nth-child(7) {
+                font-size: 12px;
+            }
+
+            .floating-hearts span:nth-child(2),
+            .floating-hearts span:nth-child(4),
+            .floating-hearts span:nth-child(6),
+            .floating-hearts span:nth-child(8) {
+                font-size: 9px;
+            }
+
+            .music-note {
+                right: 8px;
+                bottom: 8px;
+                padding: 7px 10px;
+                font-size: 11px;
+                gap: 6px;
+            }
+
+            .music-status {
+                right: 8px;
+                bottom: 52px;
+                max-width: calc(100% - 16px);
+            }
+        }
+
+        @media (max-width: 380px) {
+            .venue-title {
+                font-size: 12px;
+                line-height: 1.05;
+            }
+
+            .map-button {
+                padding: 6px 8px;
+                font-size: 10px;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div
+        class="container-fluid px-2 px-sm-3 px-md-4 py-3 py-md-4 d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card mx-auto">
+
+
+
+
+
+            <div class="floating-hearts">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="outline"></span>
+                <span class="solid"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
